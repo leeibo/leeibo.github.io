@@ -1,12 +1,12 @@
 # main links links
 main:
-  - title: "About Me"
+  - title: "About"
     url: "/#about-me"
 
   - title: "News"
     url: "/#news"
 
-  - title: "Publications"
+  - title: "Research"
     url: "/#publications"
 
   - title: "Education"
@@ -25,7 +25,7 @@ main_zh:
   - title: "动态"
     url: "/zh/#news"
 
-  - title: "论文"
+  - title: "研究成果"
     url: "/zh/#publications"
 
   - title: "教育背景"

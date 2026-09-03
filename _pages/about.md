@@ -1,164 +1,149 @@
 ---
 permalink: /
 title: ""
-excerpt: "Jiabo Zhan - computer vision, multimodal large language models, reinforcement learning, generative AI, and document intelligence."
+excerpt: "Yibo Li - embodied intelligence, vision-language-action models, robotic spatial reasoning, active perception, and memory."
 lang: en
-sidebar_description: "Computer vision, multimodal large language models, reinforcement learning, generative AI, and document intelligence."
+sidebar_description: "Embodied intelligence · VLA · Active perception"
 author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
-{% if site.google_scholar_stats_use_cdn %}
-{% assign gsDataBaseUrl = "https://cdn.jsdelivr.net/gh/" | append: site.repository | append: "@" %}
-{% else %}
-{% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
-{% endif %}
-{% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
-
 <span class='anchor' id='about-me'></span>
 
-I am **Jiabo Zhan (詹佳博)**, an incoming M.Eng. student in Computer Technology at **Tsinghua University**, advised by Prof. Chun Yuan. I received my B.E. in Software Engineering from **Beihang University** in 2026, graduating **2nd out of 172 students (top 1.2%)** with a GPA of **3.873/4.0**.
+I am **Yibo Li (李一博)**, a master's student in Software Engineering at **Beihang University**, advised by Prof. Lu Sheng. I currently work as an embodied AI algorithm intern at **AgiBot** and previously worked at the **Beijing Academy of Artificial Intelligence (BAAI)**.
 
-My research interests include **computer vision**, **multimodal large language models (MLLMs)**, **reinforcement learning**, **AI-generated content (AIGC)**, and **document intelligence**. My recent work focuses on transparent and layered RGBA generation, efficient document parsing, multimodal data construction, and evaluation.
-
-My publications have received <a href='https://scholar.google.com/citations?user=jGxsEcoAAAAJ'><strong><span id='total_cit'>14</span> Google Scholar citations</strong></a>. Citation counts are updated automatically every day. <a href='https://scholar.google.com/citations?user=jGxsEcoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations" alt="Google Scholar citations"></a>
+My research interests include **embodied intelligence**, **vision-language-action (VLA) models**, **robotic spatial reasoning**, **active perception**, and **long-horizon manipulation**. I am particularly interested in how robots build and use visual memory to acquire information, reason in 3D space, and act reliably in real environments.
 
 <div class="contact-block">
   <div class="contact-block__title">Contact</div>
-  <div><strong>Email:</strong> <a href="mailto:jiabozhan0618@gmail.com">jiabozhan0618@gmail.com</a></div>
-  <div><strong>WeChat:</strong> <code>_Marsquakes</code></div>
+  <div><strong>Email:</strong> <a href="mailto:leeibo@buaa.edu.cn">leeibo@buaa.edu.cn</a></div>
+  <div><strong>GitHub:</strong> <a href="https://github.com/leeibo">github.com/leeibo</a></div>
+  <div><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=YIXaXcoAAAAJ&amp;hl=en">Profile</a></div>
+  <div><strong>WeChat:</strong> <code>lyb371568753</code></div>
+  <div><strong>Location:</strong> Beijing, China</div>
 </div>
+
+I am open to **research collaboration** on embodied intelligence, VLA models, active perception, and robot learning. Please feel free to reach out by email.
 
 <span class='anchor' id='news'></span>
 
-# 🔥 News
+# News
 
-- *2026.08*: &nbsp;PaDoc was released with open-source code and model weights.
-- *2026.08*: &nbsp;🎉 **OmniAlpha was accepted to ACM Multimedia 2026 (ACM MM 2026) as an Oral Presentation!**
-- *2026.04*: &nbsp;OmniAlpha was substantially revised with multi-task reinforcement learning for transparency-aware generation.
-- *2025.11*: &nbsp;OmniAlpha was released with open-source code and model weights.
-- *2025.07*: &nbsp;AlphaVAE was released with open-source code, data, and models.
+- *2026.08*: &nbsp;Won **1st place in fully autonomous manipulation** at the 2nd World Humanoid Robot Games, hotel guest-service track.
+- *2026.07*: &nbsp;Our work **RoboTracer** was accepted to **ECCV 2026**. See you in Sweden!
+- *2026.06*: &nbsp;Joined **AgiBot** as an embodied AI algorithm intern, focusing on VLA training and real-robot deployment.
+- *2026.01*: &nbsp;Released the **RoboBrain 2.5** technical report on depth-aware 3D spatial reasoning and temporal value estimation.
+- *2025.06*: &nbsp;Joined **BAAI** as an embodied AI algorithm intern.
 
 <span class='anchor' id='publications'></span>
 
-# 📝 Publications
+# Publications & Reports
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge"><span>ACM MM 2026</span><span class="badge__oral">ORAL</span></div><img src='{{ "/images/omnialpha.jpg" | relative_url }}' alt="OmniAlpha examples" width="100%"></div></div>
+<div class='paper-box paper-box--text-only'>
 <div class='paper-box-text' markdown="1">
 
-[OmniAlpha: Aligning Transparency-Aware Generation via Multi-Task Unified Reinforcement Learning](https://arxiv.org/abs/2511.20211)
+[RoboBrain 2.5: Depth in Sight, Time in Mind](https://arxiv.org/abs/2601.14352)
 
-Hao Yu<sup>*</sup>, Jinglin Wang<sup>*</sup>, **Jiabo Zhan**<sup>*</sup>, Rui Chen, Zile Wang, Huaisong Zhang, Hongyu Li, Xinrui Chen, Yongxian Wei, Chun Yuan
+Technical Report, arXiv:2601.14352 · 2026
 
-<sup>*</sup> Equal contribution. **ACM Multimedia 2026.** <span class="oral-highlight">ORAL PRESENTATION</span>
-
-[**Paper**](https://arxiv.org/abs/2511.20211) / [**PDF**](https://arxiv.org/pdf/2511.20211) / [**Code**](https://github.com/Longin-Yu/OmniAlpha) / [**Model**](https://huggingface.co/Longin-Yu/OmniAlpha) / [**Scholar**](https://scholar.google.com/citations?view_op=view_citation&user=jGxsEcoAAAAJ&citation_for_view=jGxsEcoAAAAJ:u-x6o8ySG0sC)
-
-- A unified framework for transparency-aware generation and manipulation across image matting, object removal, layer decomposition, and RGBA generation.
-- **Contribution:** Co-designed the multi-task data schema and evaluation pipeline, curated training data, and contributed to multi-task SFT and GRPO-style RL post-training; achieved a 9.07% relative reduction in RGB L1 on layer decomposition.
+- Contributed to data and model development for **depth-aware 3D spatial reasoning** and **dense temporal value estimation**, improving spatial and temporal modeling in embodied foundation models.
 </div>
 </div>
 
 <div class='paper-box paper-box--text-only'>
 <div class='paper-box-text' markdown="1">
 
-[PaDoc: Layout-Grounded Parallel Decoding for Document Parsing](https://arxiv.org/abs/2608.06146)
+**ActiveArena: Benchmarking and Understanding Active Perception in Robotic Manipulation**
 
-Hao Yu<sup>*</sup>, **Jiabo Zhan**<sup>*</sup>, Kang Liu, Linnan Zhao, Dongxu Yue, Rui Chen, Jinglin Wang, Chong Sun, Chen Li, Jing Lyu, Chun Yuan
+**AAAI 2027 submission** · 2026 · First author
 
-<sup>*</sup> Equal contribution.
+**Overview:** ActiveArena is a unified testbed for studying how robots actively acquire, maintain, and use information during manipulation. It introduces ActiveArena-Sim, 35 tasks across five categories, rich memory annotations, and ID/OOD protocols with disjoint scenes and unseen distractors.
 
-[**Paper**](https://arxiv.org/abs/2608.06146) / [**PDF**](https://arxiv.org/pdf/2608.06146) / [**Code**](https://github.com/Longin-Yu/Padoc) / [**Model**](https://huggingface.co/Longin-Yu/PaDoc) / [**Scholar**](https://scholar.google.com/citations?view_op=view_citation&user=jGxsEcoAAAAJ&citation_for_view=jGxsEcoAAAAJ:2osOgNQ5qMEC)
-
-- A layout-grounded parser that branches regional content from shared full-page prefixes, improving throughput by 67.4–118% over same-backbone sequential decoding while retaining top-tier parsing quality.
+**My contribution:** Proposed the benchmark and its evaluation protocol; built ActiveArena-Sim and ActiveArena-Bench; developed 13 VLA configurations to analyze memory writing, memory capacity, proprioception, subtask supervision, and high-level planning.
 </div>
 </div>
 
 <div class='paper-box paper-box--text-only'>
 <div class='paper-box-text' markdown="1">
 
-[AlphaVAE: Unified End-to-End RGBA Image Reconstruction and Generation with Alpha-Aware Representation Learning](https://arxiv.org/abs/2507.09308)
+**Learning Active Perception and Manipulation via Spatio-temporal Visual Memory**
 
-Zile Wang, Hao Yu, **Jiabo Zhan**, Chun Yuan
+**NeurIPS 2026 submission** · 2026 · Co-first author
 
-[**Paper**](https://arxiv.org/abs/2507.09308) / [**PDF**](https://arxiv.org/pdf/2507.09308) / [**Code**](https://github.com/o0o0o00o0/AlphaVAE) / [**Model**](https://huggingface.co/AlphaVAE/AlphaVAE) / [**Scholar**](https://scholar.google.com/citations?view_op=view_citation&user=jGxsEcoAAAAJ&citation_for_view=jGxsEcoAAAAJ:u5HHmVD_uO8C)
+**Overview:** ActiveZero formulates active perception as information-driven spatio-temporal memory management. A unified VLA model expands memory through exploration, retrieves relevant evidence for action, and filters memory online for efficient long-horizon interaction.
 
-- An alpha-aware VAE for end-to-end RGBA reconstruction and transparent image generation, accompanied by the ALPHA evaluation benchmark.
-- **Contribution:** Curated and governed 8,124 high-quality RGBA training samples and helped design the benchmark, evaluation code, and LoRA data iteration workflow.
+**My contribution:** Built the end-to-end active-perception VLA and its memory expansion, retrieval, and filtering mechanisms; contributed to ActiveMem and ActiveBench, including large-scale training data, VQA evaluation, and long-horizon simulated manipulation.
+</div>
+</div>
+
+<div class='paper-box paper-box--text-only'>
+<div class='paper-box-text' markdown="1">
+
+[RoboTracer: Mastering Spatial Trace with Reasoning in Vision-Language Models for Robotics](https://zhoues.github.io/RoboTracer/)
+
+**ECCV 2026** · 2025–2026 · Co-first author
+
+**Overview:** RoboTracer is a 3D-aware vision-language model for spatial tracing, combining universal spatial encoding, metric-aware supervised fine-tuning, and metric-sensitive reinforcement fine-tuning. It introduces TraceSpatial, a 30M-pair dataset, and TraceSpatial-Bench for multi-step metric-grounded reasoning.
+
+**My contribution:** Contributed to large-scale robot manipulation and spatial reasoning data construction and cleaning across **AgiBot**, DROID, and RoboTwin; designed the unified pipeline for trajectory extraction, spatial consistency checks, and anomaly filtering.
 </div>
 </div>
 
 <span class='anchor' id='education'></span>
 
-# 🎓 Education
+# Education
 
 <div class="cv-item">
-  <div class="cv-item__header">
-    <div class="cv-item__title">Tsinghua University, Shenzhen International Graduate School</div>
-    <div class="cv-item__date">Sep. 2026 – Jun. 2028 (expected)</div>
-  </div>
-  <div class="cv-item__meta">M.Eng. in Computer Technology · Advisor: Prof. Chun Yuan</div>
-  <p>Research focus: computer vision, multimodal large language models, and reinforcement learning.</p>
+  <div class="cv-item__header"><div class="cv-item__title">Beihang University · School of Software</div><div class="cv-item__date">Sep. 2025 – Present</div></div>
+  <div class="cv-item__meta">M.S. in Software Engineering · Advisor: Prof. Lu Sheng</div>
+  <p>Research focus: embodied intelligence, VLA models, robotic spatial reasoning, active perception, and memory.</p>
 </div>
 
 <div class="cv-item">
-  <div class="cv-item__header">
-    <div class="cv-item__title">Beihang University, School of Software</div>
-    <div class="cv-item__date">Sep. 2022 – Jun. 2026</div>
-  </div>
-  <div class="cv-item__meta">B.E. in Software Engineering · GPA: 3.873/4.0 · Weighted average: 93.005/100</div>
-  <p>Ranked 2/172 (top 1.2%) and admitted to Tsinghua University for graduate study through recommendation, exempt from the national entrance examination.</p>
+  <div class="cv-item__header"><div class="cv-item__title">Beihang University · School of Software</div><div class="cv-item__date">Sep. 2020 – Jun. 2025</div></div>
+  <div class="cv-item__meta">B.E. in Software Engineering</div>
 </div>
 
 <span class='anchor' id='experience'></span>
 
-# 💼 Research & Industry Experience
+# Research & Industry Experience
 
 <div class="cv-item" markdown="1">
+<div class="cv-item__header"><div class="cv-item__title">AgiBot · Embodied AI Algorithm Intern</div><div class="cv-item__date">Jun. 2026 – Present</div></div>
+<div class="cv-item__meta">Humanoid robotics · VLA · Real-robot deployment</div>
 
-<div class="cv-item__header">
-  <div class="cv-item__title">VFlow AI Video Generation · Tsinghua University, Shenzhen International Graduate School</div>
-  <div class="cv-item__date">Dec. 2025 – Jun. 2026</div>
-</div>
-<div class="cv-item__meta">Algorithm Intern · Industry project led by Prof. Chun Yuan</div>
-
-- Helped build a page-level multimodal pipeline that turns product pages, images, and marketing copy into structured attributes, scripts, and generated videos.
-- Built and cleaned image-text and instruction data, iterated prompt templates, and conducted offline evaluation for visual grounding, structured extraction, and multi-turn generation.
-
+- Develop embodied policies for humanoid robots, covering VLA training, active perception, task planning, and long-horizon manipulation.
+- Participate in visual perception, system integration, and real-world reliability validation for complex service tasks.
 </div>
 
 <div class="cv-item" markdown="1">
+<div class="cv-item__header"><div class="cv-item__title">Beijing Academy of Artificial Intelligence (BAAI) · Embodied AI Algorithm Intern</div><div class="cv-item__date">Jun. 2025 – Jun. 2026</div></div>
+<div class="cv-item__meta">RoboBrain 2.5 · RoboTracer · Active perception</div>
 
-<div class="cv-item__header">
-  <div class="cv-item__title">Momenta</div>
-  <div class="cv-item__date">Sep. 2025 – Nov. 2025</div>
-</div>
-<div class="cv-item__meta">Algorithm Intern · Autonomous-driving road-condition classification</div>
-
-- Developed a Qwen3-VL classification approach that combined camera images with structured rosbag signals such as speed and position; built the evaluation set, prompts, and offline evaluation pipeline.
-- Migrated a high-cost Gemini-2.5 Pro workflow to a deployable open-source VLM solution, reducing classification cost by approximately 80% while accepting an accuracy change from 80% to 70%.
-
+- Worked on 3D spatial reasoning, robot trajectory generation, spatial data construction, and embodied-model evaluation.
+- Built data-processing pipelines, simulation benchmarks, and evaluation systems over real and simulated robot data.
 </div>
 
 <span class='anchor' id='honors'></span>
 
-# 🏆 Honors & Awards
+# Competition & Honors
 
-- **National Scholarship**, 2022–2023 and 2023–2024 academic years.
-- **Outstanding Student** at Beihang University for three consecutive academic years; **Outstanding Communist Youth League Member**.
-- **Samsung Scholarship**, 2024–2025; **First Prize in Beijing**, Chinese Mathematics Competitions for College Students.
+- **2nd World Humanoid Robot Games · Hotel guest service (Aug. 2026):** 1st place in fully autonomous manipulation. Contributed to the team and to the deployment of long-horizon service tasks, including luggage handling, room restocking, and room organization.
+- **National Undergraduate Mathematics Competition:** First Prize (2021, 2023).
+- **National Undergraduate Physics Competition:** First Prize (2021, 2022).
+- **National Physics Olympiad for Secondary School Students:** Provincial First Prize (36th competition).
+- **Beihang University scholarships:** Competition Special Scholarship (2021–2022); First-class Academic Scholarship (2022–2025).
+- **Outstanding Student:** Beihang University (2020–2021, 2023–2024).
 
 <span class='anchor' id='skills'></span>
 
-# 🛠 Skills
+# Skills
 
 <div class="skills-grid">
-  <p><strong>Models & Training</strong><br>VLM, VAE, DiT, multi-task SFT, GRPO-style RL; familiar with DPO and PPO.</p>
-  <p><strong>Data & Evaluation</strong><br>Dataset construction and governance, benchmark design, evaluation pipelines, offline evaluation, and error analysis.</p>
-  <p><strong>Multimodal Understanding</strong><br>Visual grounding, OCR, layout analysis, key information extraction, and image-text-structured signal modeling.</p>
-  <p><strong>Engineering</strong><br>Python, PyTorch, C/C++, and Java; multimodal pipeline engineering and product deployment.</p>
-  <p><strong>Languages</strong><br>Chinese (native); English (CET-4: 662, CET-6: 633).</p>
-  <p><strong>Service</strong><br>Teaching assistant for College English and Compiler Technology; 250 hours of volunteering in Beijing.</p>
+  <p><strong>Embodied AI</strong><br>VLA training, active perception, visual memory, spatial reasoning, long-horizon manipulation, and real-robot deployment.</p>
+  <p><strong>Data & Evaluation</strong><br>Robot trajectory processing, dataset construction, benchmark design, simulation evaluation, and error analysis.</p>
+  <p><strong>Engineering</strong><br>Python, PyTorch, C/C++, Java; distributed data pipelines and multimodal system integration.</p>
+  <p><strong>Teaching & Service</strong><br>Teaching assistant for Linear Algebra, Data Structures, and Computer Vision; Deputy Minister of the Beihang Student Science Association Publicity Department.</p>
 </div>

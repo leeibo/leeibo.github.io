@@ -4,7 +4,9 @@ from datetime import datetime, timezone
 import os
 from pathlib import Path
 
-scholar_id = os.environ.get("GOOGLE_SCHOLAR_ID", "jGxsEcoAAAAJ")
+scholar_id = os.environ.get("GOOGLE_SCHOLAR_ID")
+if not scholar_id:
+    raise SystemExit("Set GOOGLE_SCHOLAR_ID before running the crawler.")
 author: dict = scholarly.search_author_id(scholar_id)
 scholarly.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
 author['updated'] = datetime.now(timezone.utc).isoformat()

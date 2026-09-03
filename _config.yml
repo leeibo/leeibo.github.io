@@ -6,10 +6,10 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Jiabo Zhan"
-description              : "Computer vision, multimodal large language models, reinforcement learning, generative AI, and document intelligence."
-repository               : "TonyZhan10/TonyZhan10.github.io"
-url                      : "https://tonyzhan10.github.io"
+title                    : "Yibo Li"
+description              : "Embodied intelligence, vision-language-action models, robotic spatial reasoning, active perception, and memory."
+repository               : "leeibo/leeibo.github.io"
+url                      : "https://leeibo.github.io"
 baseurl                  : ""
 google_scholar_stats_use_cdn : true
 
@@ -23,18 +23,18 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Jiabo Zhan"
-  avatar           : "images/jiabo-zhan.jpg"
-  bio              : "CV · MLLM · RL · AIGC"
-  bio_zh           : "计算机视觉 · 多模态大模型 · 强化学习 · 生成式 AI"
+  name             : "Yibo Li"
+  name_zh          : "李一博"
+  bio              : "Embodied AI · VLA"
+  bio_zh           : "具身智能 · VLA · 空间智能"
   location         : "Beijing, China"
   location_zh      : "中国，北京"
-  employer         : "Tsinghua University"
-  employer_zh      : "清华大学"
+  employer         : "Beihang University"
+  employer_zh      : "北京航空航天大学"
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=jGxsEcoAAAAJ"
-  email            : "jiabozhan0618@gmail.com"
-  wechat           : "_Marsquakes"
+  googlescholar    : "https://scholar.google.com/citations?user=YIXaXcoAAAAJ&hl=en"
+  email            : "leeibo@buaa.edu.cn"
+  wechat           : "lyb371568753"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -43,7 +43,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "TonyZhan10"
+  github           : "leeibo"
   google_plus      :
   keybase          :
   instagram        :

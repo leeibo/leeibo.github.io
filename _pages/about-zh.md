@@ -1,161 +1,123 @@
 ---
 permalink: /zh/
 title: ""
-excerpt: "詹佳博的个人主页：计算机视觉、多模态大模型、强化学习、生成式人工智能与文档智能。"
+excerpt: "李一博的个人主页：具身智能、视觉-语言-行动模型、机器人空间推理、主动感知与记忆。"
 lang: zh
-sidebar_description: "计算机视觉、多模态大模型、强化学习、生成式人工智能与文档智能。"
 author_profile: true
 ---
 
-{% if site.google_scholar_stats_use_cdn %}
-{% assign gsDataBaseUrl = "https://cdn.jsdelivr.net/gh/" | append: site.repository | append: "@" %}
-{% else %}
-{% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
-{% endif %}
-{% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
-
 <span class='anchor' id='about-me'></span>
 
-我是**詹佳博（Jiabo Zhan）**，即将于**清华大学**攻读计算机技术硕士学位，导师为袁春教授。我于 2026 年获得北京航空航天大学软件工程学士学位，本科期间以 **GPA 3.873/4.0、专业排名 2/172（前 1.2%）**毕业。
+我是**李一博（Yibo Li）**，北京航空航天大学软件学院硕士研究生，导师为盛律教授。目前在**智元机器人（AgiBot）**从事具身算法研发，曾在**北京智源人工智能研究院（BAAI）**实习。
 
-我的研究兴趣包括**计算机视觉**、**多模态大模型（MLLM）**、**强化学习**、**生成式人工智能（AIGC）**和**文档智能**。近期工作主要围绕透明及分层 RGBA 图像生成、高效文档解析、多模态数据构建与评测展开。
-
-我的论文目前已获得 <a href='https://scholar.google.com/citations?user=jGxsEcoAAAAJ'><strong><span id='total_cit'>14</span> 次 Google Scholar 引用</strong></a>，引用数据每日自动更新。<a href='https://scholar.google.com/citations?user=jGxsEcoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations" alt="Google Scholar 引用数"></a>
+我的研究兴趣包括**具身智能**、**视觉-语言-行动模型（VLA）**、**机器人空间推理**、**主动感知**与**长程操作**。近期工作关注机器人如何构建和利用视觉记忆，在真实环境中主动获取信息、进行三维推理并可靠执行任务。
 
 <div class="contact-block">
   <div class="contact-block__title">联系方式</div>
-  <div><strong>邮箱：</strong><a href="mailto:jiabozhan0618@gmail.com">jiabozhan0618@gmail.com</a></div>
-  <div><strong>微信：</strong><code>_Marsquakes</code></div>
+  <div><strong>邮箱：</strong><a href="mailto:leeibo@buaa.edu.cn">leeibo@buaa.edu.cn</a></div>
+  <div><strong>GitHub：</strong><a href="https://github.com/leeibo">github.com/leeibo</a></div>
+  <div><strong>Google Scholar：</strong><a href="https://scholar.google.com/citations?user=YIXaXcoAAAAJ&amp;hl=en">主页</a></div>
+  <div><strong>微信：</strong><code>lyb371568753</code></div>
+  <div><strong>所在地：</strong>中国，北京</div>
 </div>
+
+欢迎围绕**具身智能、VLA、主动感知与机器人学习**开展学术交流与研究合作，欢迎通过邮件联系。
 
 <span class='anchor' id='news'></span>
 
-# 🔥 最新动态
+# 最新动态
 
-- *2026.08*: &nbsp;PaDoc 正式发布，代码与模型权重已开源。
-- *2026.08*: &nbsp;🎉 **OmniAlpha 被 ACM Multimedia 2026（ACM MM 2026）录用，并入选 Oral Presentation（口头报告）！**
-- *2026.04*: &nbsp;OmniAlpha 完成重要更新，引入面向透明感知生成的多任务强化学习。
-- *2025.11*: &nbsp;OmniAlpha 正式发布，代码与模型权重已开源。
-- *2025.07*: &nbsp;AlphaVAE 正式发布，代码、数据与模型已开源。
+- *2026.08*：在第二届世界人形机器人运动会酒店场景中获得**全自主操作第一名**。
+- *2026.07*：我们的工作 **RoboTracer** 被 **ECCV 2026** 接收，瑞典见！
+- *2026.06*：加入**智元机器人（AgiBot）**，从事 VLA 训练与真实机器人部署。
+- *2026.01*：发布 **RoboBrain 2.5** 技术报告，研究深度感知三维空间推理与时序价值估计。
+- *2025.06*：加入**北京智源人工智能研究院**，从事具身算法研究。
 
 <span class='anchor' id='publications'></span>
 
-# 📝 论文
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge"><span>ACM MM 2026</span><span class="badge__oral">ORAL</span></div><img src='{{ "/images/omnialpha.jpg" | relative_url }}' alt="OmniAlpha 示例" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[OmniAlpha: Aligning Transparency-Aware Generation via Multi-Task Unified Reinforcement Learning](https://arxiv.org/abs/2511.20211)
-
-Hao Yu<sup>*</sup>, Jinglin Wang<sup>*</sup>, **Jiabo Zhan**<sup>*</sup>, Rui Chen, Zile Wang, Huaisong Zhang, Hongyu Li, Xinrui Chen, Yongxian Wei, Chun Yuan
-
-<sup>*</sup> 共同一作。**ACM Multimedia 2026。** <span class="oral-highlight">ORAL PRESENTATION</span>
-
-[**论文**](https://arxiv.org/abs/2511.20211) / [**PDF**](https://arxiv.org/pdf/2511.20211) / [**代码**](https://github.com/Longin-Yu/OmniAlpha) / [**模型**](https://huggingface.co/Longin-Yu/OmniAlpha) / [**Scholar**](https://scholar.google.com/citations?view_op=view_citation&user=jGxsEcoAAAAJ&citation_for_view=jGxsEcoAAAAJ:u-x6o8ySG0sC)
-
-- 统一处理图像抠图、目标移除、图层分解和 RGBA 生成等透明感知生成与编辑任务。
-- **个人贡献：**参与多任务数据 schema 与评测流程设计、训练数据构建与治理，以及多任务 SFT 和 GRPO 风格强化学习后训练；在图层分解任务上实现 RGB L1 相对降低 9.07%。
-</div>
-</div>
+# 论文与技术报告
 
 <div class='paper-box paper-box--text-only'>
 <div class='paper-box-text' markdown="1">
 
-[PaDoc: Layout-Grounded Parallel Decoding for Document Parsing](https://arxiv.org/abs/2608.06146)
+[RoboBrain 2.5: Depth in Sight, Time in Mind](https://arxiv.org/abs/2601.14352)
 
-Hao Yu<sup>*</sup>, **Jiabo Zhan**<sup>*</sup>, Kang Liu, Linnan Zhao, Dongxu Yue, Rui Chen, Jinglin Wang, Chong Sun, Chen Li, Jing Lyu, Chun Yuan
+技术报告，arXiv:2601.14352 · 2026
 
-<sup>*</sup> 共同一作。
-
-[**论文**](https://arxiv.org/abs/2608.06146) / [**PDF**](https://arxiv.org/pdf/2608.06146) / [**代码**](https://github.com/Longin-Yu/Padoc) / [**模型**](https://huggingface.co/Longin-Yu/PaDoc) / [**Scholar**](https://scholar.google.com/citations?view_op=view_citation&user=jGxsEcoAAAAJ&citation_for_view=jGxsEcoAAAAJ:2osOgNQ5qMEC)
-
-- 提出布局驱动的文档解析器，让各区域内容从共享的整页前缀并行分支；相较同骨干串行解码方案，吞吐提升 67.4–118%，同时保持领先的解析质量。
+- 参与 **Depth-aware 3D Spatial Reasoning** 与 **Dense Temporal Value Estimation** 的数据和模型建设，增强具身基础模型的空间推理与时序建模能力。
 </div>
 </div>
 
-<div class='paper-box paper-box--text-only'>
-<div class='paper-box-text' markdown="1">
+<div class='paper-box paper-box--text-only'><div class='paper-box-text' markdown="1">
 
-[AlphaVAE: Unified End-to-End RGBA Image Reconstruction and Generation with Alpha-Aware Representation Learning](https://arxiv.org/abs/2507.09308)
+**ActiveArena: Benchmarking and Understanding Active Perception in Robotic Manipulation**
 
-Zile Wang, Hao Yu, **Jiabo Zhan**, Chun Yuan
+**AAAI 2027 在投** · 2026 · 一作
 
-[**论文**](https://arxiv.org/abs/2507.09308) / [**PDF**](https://arxiv.org/pdf/2507.09308) / [**代码**](https://github.com/o0o0o00o0/AlphaVAE) / [**模型**](https://huggingface.co/AlphaVAE/AlphaVAE) / [**Scholar**](https://scholar.google.com/citations?view_op=view_citation&user=jGxsEcoAAAAJ&citation_for_view=jGxsEcoAAAAJ:u5HHmVD_uO8C)
+**工作简介：** ActiveArena 是一个面向机器人主动感知与操作的统一评测平台，研究机器人如何主动获取、维护并利用信息。项目构建了 ActiveArena-Sim、覆盖五类任务的 35 个测试任务、丰富的记忆标注，以及包含不同场景和干扰配置的 ID/OOD 评测协议。
 
-- 面向端到端 RGBA 图像重建与透明图像生成的 Alpha-aware VAE，并配套提出 ALPHA 评测基准。
-- **个人贡献：**完成 8,124 张高质量 RGBA 训练样本的收集、清洗与治理，并参与 benchmark、评测代码和 LoRA 数据迭代流程设计。
-</div>
-</div>
+**个人贡献：** 提出 benchmark 与评测协议；构建 ActiveArena-Sim 和 ActiveArena-Bench；设计 13 种 VLA 配置，系统分析记忆写入、记忆容量、本体状态、子任务监督和高层规划的影响。
+</div></div>
+
+<div class='paper-box paper-box--text-only'><div class='paper-box-text' markdown="1">
+
+**Learning Active Perception and Manipulation via Spatio-temporal Visual Memory**
+
+**NeurIPS 2026 在投** · 2026 · 共同一作
+
+**工作简介：** ActiveZero 将主动感知建模为信息驱动的时空视觉记忆管理问题，通过主动探索扩展记忆、检索执行所需证据，并在线过滤记忆，实现长程交互中的统一感知与动作决策。
+
+**个人贡献：** 构建端到端主动感知 VLA 及记忆扩展、检索和过滤机制；参与 ActiveMem 与 ActiveBench 构建，覆盖大规模训练数据、VQA 评测和长程仿真操作任务。
+</div></div>
+
+<div class='paper-box paper-box--text-only'><div class='paper-box-text' markdown="1">
+
+[RoboTracer: Mastering Spatial Trace with Reasoning in Vision-Language Models for Robotics](https://zhoues.github.io/RoboTracer/)
+
+**ECCV 2026** · 2025–2026 · 共同一作
+
+**工作简介：** RoboTracer 是一个面向空间轨迹生成的三维感知视觉语言模型，通过通用空间编码器、度量感知的监督微调和过程奖励强化微调，提升多步度量空间推理能力。项目同时构建了包含 3000 万 QA 对的 TraceSpatial 数据集和 TraceSpatial-Bench 基准。
+
+**个人贡献：** 负责 **AgiBot**、DROID、RoboTwin 等真实与仿真机器人操作及空间推理数据的构建与清洗；设计统一数据处理 pipeline，完成轨迹提取、空间一致性校验和异常样本过滤。
+</div></div>
 
 <span class='anchor' id='education'></span>
 
-# 🎓 教育背景
+# 教育背景
 
-<div class="cv-item">
-  <div class="cv-item__header">
-    <div class="cv-item__title">清华大学 · 深圳国际研究生院</div>
-    <div class="cv-item__date">2026.09 – 2028.06（预计）</div>
-  </div>
-  <div class="cv-item__meta">计算机技术硕士 · 导师：袁春教授</div>
-  <p>研究方向：计算机视觉、多模态大模型与强化学习。</p>
-</div>
+<div class="cv-item"><div class="cv-item__header"><div class="cv-item__title">北京航空航天大学 · 软件学院</div><div class="cv-item__date">2025.09 – 至今</div></div><div class="cv-item__meta">软件工程硕士 · 导师：盛律教授</div><p>研究方向：具身智能、VLA、机器人空间推理、主动感知与记忆。</p></div>
 
-<div class="cv-item">
-  <div class="cv-item__header">
-    <div class="cv-item__title">北京航空航天大学 · 软件学院</div>
-    <div class="cv-item__date">2022.09 – 2026.06</div>
-  </div>
-  <div class="cv-item__meta">软件工程学士 · GPA：3.873/4.0 · 加权平均分：93.005/100</div>
-  <p>专业排名 2/172（前 1.2%），免试攻读清华大学计算机技术硕士学位。</p>
-</div>
+<div class="cv-item"><div class="cv-item__header"><div class="cv-item__title">北京航空航天大学 · 软件学院</div><div class="cv-item__date">2020.09 – 2025.06</div></div><div class="cv-item__meta">软件工程本科</div></div>
 
 <span class='anchor' id='experience'></span>
 
-# 💼 科研与实习经历
+# 科研与实习经历
 
-<div class="cv-item" markdown="1">
+<div class="cv-item" markdown="1"><div class="cv-item__header"><div class="cv-item__title">智元机器人（AgiBot） · 具身算法实习生</div><div class="cv-item__date">2026.06 – 至今</div></div><div class="cv-item__meta">人形机器人 · VLA · 实机部署</div>
 
-<div class="cv-item__header">
-  <div class="cv-item__title">VFlow AI 视频生成 · 清华大学深圳国际研究生院</div>
-  <div class="cv-item__date">2025.12 – 2026.06</div>
-</div>
-<div class="cv-item__meta">算法实习 · 袁春教授横向项目</div>
-
-- 参与构建页面级多模态理解 pipeline，将商品详情页、商品图片与营销文案转化为结构化属性、脚本及生成视频。
-- 负责图文样本和指令数据构建与清洗、prompt 模板迭代及离线评测，重点关注视觉 grounding、结构化信息抽取和多轮生成质量。
-
+- 参与人形机器人具身算法研发与实机部署，围绕 VLA、主动感知、任务规划和长程操作开展策略训练与系统联调。
+- 参与复杂真实场景中的视觉感知、机器人操作算法部署和稳定性验证。
 </div>
 
-<div class="cv-item" markdown="1">
+<div class="cv-item" markdown="1"><div class="cv-item__header"><div class="cv-item__title">北京智源人工智能研究院（BAAI） · 具身算法实习生</div><div class="cv-item__date">2025.06 – 2026.06</div></div><div class="cv-item__meta">RoboBrain 2.5 · RoboTracer · 主动感知</div>
 
-<div class="cv-item__header">
-  <div class="cv-item__title">Momenta</div>
-  <div class="cv-item__date">2025.09 – 2025.11</div>
-</div>
-<div class="cv-item__meta">算法实习 · 自动驾驶路况分类</div>
-
-- 基于 Qwen3-VL 构建融合相机图像与车速、位置等 rosbag 结构化信号的路况分类方案，完成评测集、prompt 与离线评测流程设计。
-- 将高成本 Gemini-2.5 Pro 流程迁移为可部署的开源 VLM 方案，在接受准确率由 80% 降至 70% 的情况下，将分类成本降低约 80%。
-
+- 参与三维空间推理、机器人轨迹生成、空间数据构建与具身模型评测。
+- 构建覆盖真实与仿真机器人数据的数据处理 pipeline、仿真 benchmark 和评测系统。
 </div>
 
 <span class='anchor' id='honors'></span>
 
-# 🏆 奖项荣誉
+# 竞赛与荣誉
 
-- **国家奖学金**：2022–2023、2023–2024 学年。
-- 连续三个学年获评北京航空航天大学**校级三好学生**，并获**校级优秀团员**。
-- **三星奖学金**（2024–2025 学年）；全国大学生数学竞赛**北京市一等奖**。
+- **第二届世界人形机器人运动会·酒店场景（2026.08）：**获得全自主操作第一名，参与长流程服务任务的算法与部署，任务覆盖行李搬运、客房补货与客房整理。
+- **全国大学生数学竞赛：**一等奖（2021、2023）。
+- **全国大学生物理竞赛：**一等奖（2021、2022）。
+- **第三十六届全国中学生物理竞赛：**省一等奖。
+- **北航奖学金：**学科竞赛特等奖学金（2021–2022）；学习优秀一等奖学金（2022–2025）。
+- **校级三好学生：**2020–2021、2023–2024。
 
 <span class='anchor' id='skills'></span>
 
-# 🛠 专业技能
+# 专业技能
 
-<div class="skills-grid">
-  <p><strong>模型与训练</strong><br>VLM、VAE、DiT、多任务 SFT、GRPO 风格强化学习后训练；熟悉 DPO 与 PPO。</p>
-  <p><strong>数据与评测</strong><br>训练数据构建与治理、benchmark 设计、评测流水线、离线评测及误差分析。</p>
-  <p><strong>多模态理解</strong><br>视觉 grounding、OCR、版面分析、关键信息抽取及图像—文本—结构化信号联合建模。</p>
-  <p><strong>工程能力</strong><br>Python、PyTorch、C/C++、Java；具备多模态 pipeline 工程化与产品化落地经验。</p>
-  <p><strong>外语能力</strong><br>英语 CET-4：662 分，CET-6：633 分。</p>
-  <p><strong>其他经历</strong><br>《大学英语》《编译技术》课程助教；志愿北京累计 250 小时。</p>
-</div>
+<div class="skills-grid"><p><strong>具身智能</strong><br>VLA 训练、主动感知、视觉记忆、空间推理、长程操作与实机部署。</p><p><strong>数据与评测</strong><br>机器人轨迹处理、数据集构建、benchmark 设计、仿真评测与误差分析。</p><p><strong>工程能力</strong><br>Python、PyTorch、C/C++、Java；分布式数据 pipeline 与多模态系统联调。</p><p><strong>助教与校园工作</strong><br>线性代数、数据结构、计算机视觉课程助教；北航大学生科协宣传部副部长。</p></div>

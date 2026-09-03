@@ -3,14 +3,16 @@
 {% endif %}
 
 {% if page.lang == "zh" %}
+  {% assign author_name = author.name_zh | default: author.name %}
   {% assign author_bio = author.bio_zh | default: author.bio %}
   {% assign author_location = author.location_zh | default: author.location %}
   {% assign author_employer = author.employer_zh | default: author.employer %}
-  {% assign sidebar_description = page.sidebar_description | default: site.description %}
+  {% assign sidebar_description = page.sidebar_description %}
   {% assign email_label = "邮箱" %}
   {% assign wechat_label = "微信" %}
   {% assign scholar_label = "谷歌学术" %}
 {% else %}
+  {% assign author_name = author.name %}
   {% assign author_bio = author.bio %}
   {% assign author_location = author.location %}
   {% assign author_employer = author.employer %}
@@ -22,12 +24,14 @@
 
 <div itemscope itemtype="http://schema.org/Person" class="profile_box">
 
-  <div class="author__avatar">
-    <img src="{{ author.avatar | relative_url }}" class="author__avatar" alt="{{ author.name }}">
-  </div>
+  {% if author.avatar %}
+    <div class="author__avatar">
+      <img src="{{ author.avatar | relative_url }}" class="author__avatar" alt="{{ author_name }}">
+    </div>
+  {% endif %}
 
   <div class="author__content">
-    <h3 class="author__name">{{ author.name }}</h3>
+    <h3 class="author__name">{{ author_name }}</h3>
     {% if author_bio %}<p class="author__bio">{{ author_bio }}</p>{% endif %}
   </div>
 
