@@ -34,7 +34,7 @@ jobs:
         timeout-minutes: 8
         working-directory: google_scholar_crawler
         env:
-          GOOGLE_SCHOLAR_ID: jGxsEcoAAAAJ
+          GOOGLE_SCHOLAR_ID: YIXaXcoAAAAJ
         run: python main.py
 
       - name: Publish citation data
