@@ -57,7 +57,7 @@ Technical Report, arXiv:2601.14352 · 2026
 
 **ActiveArena: Benchmarking and Understanding Active Perception in Robotic Manipulation**
 
-**AAAI 2027 submission** · 2026 · First author
+2026 · First author
 
 **Overview:** ActiveArena is a unified testbed for studying how robots actively acquire, maintain, and use information during manipulation. It introduces ActiveArena-Sim, 35 tasks across five categories, rich memory annotations, and ID/OOD protocols with disjoint scenes and unseen distractors.
 
@@ -70,7 +70,7 @@ Technical Report, arXiv:2601.14352 · 2026
 
 **Learning Active Perception and Manipulation via Spatio-temporal Visual Memory**
 
-**NeurIPS 2026 submission** · 2026 · Co-first author
+2026 · Co-first author
 
 **Overview:** ActiveZero formulates active perception as information-driven spatio-temporal memory management. A unified VLA model expands memory through exploration, retrieves relevant evidence for action, and filters memory online for efficient long-horizon interaction.
 

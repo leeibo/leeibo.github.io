@@ -52,7 +52,7 @@ author_profile: true
 
 **ActiveArena: Benchmarking and Understanding Active Perception in Robotic Manipulation**
 
-**AAAI 2027 在投** · 2026 · 一作
+2026 · 一作
 
 **工作简介：** ActiveArena 是一个面向机器人主动感知与操作的统一评测平台，研究机器人如何主动获取、维护并利用信息。项目构建了 ActiveArena-Sim、覆盖五类任务的 35 个测试任务、丰富的记忆标注，以及包含不同场景和干扰配置的 ID/OOD 评测协议。
 
@@ -63,7 +63,7 @@ author_profile: true
 
 **Learning Active Perception and Manipulation via Spatio-temporal Visual Memory**
 
-**NeurIPS 2026 在投** · 2026 · 共同一作
+2026 · 共同一作
 
 **工作简介：** ActiveZero 将主动感知建模为信息驱动的时空视觉记忆管理问题，通过主动探索扩展记忆、检索执行所需证据，并在线过滤记忆，实现长程交互中的统一感知与动作决策。
 
