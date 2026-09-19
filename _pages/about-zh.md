@@ -50,7 +50,7 @@ author_profile: true
 
 <div class='paper-box paper-box--text-only'><div class='paper-box-text' markdown="1">
 
-**ActiveArena: Benchmarking and Understanding Active Perception in Robotic Manipulation**
+[ActiveArena: Benchmarking and Understanding Active Perception in Robotic Manipulation](https://leeibo.github.io/ActiveArena/)
 
 2026 · 一作
 

@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ActiveArena: Benchmarking and Understanding Active Perception in Robotic Manipulation.">
+  <link rel="canonical" href="https://leeibo.github.io/ActiveArena/">
+  <title>ActiveArena: Active Perception in Robotic Manipulation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <style id="embedded-styles">
+:root {
+  --ink: #24354a;
+  --ink-strong: #16293c;
+  --muted: #5f7184;
+  --muted-2: #788ba0;
+  --line: #d8e7f2;
+  --line-strong: #b9d2e3;
+  --light: #fafaf8;
+  --surface-alt: #f7f5ef;
+  --paper: #ffffff;
+  --link: #0e78b2;
+  --link-hover: #095f91;
+  --link-soft: #eaf7f0;
+  --warm: #bd5a13;
+  --ok: #2da36d;
+  --container: 960px;
+  --narrow: 820px;
+  --sans: "Noto Sans", Arial, sans-serif;
+  --display: "Google Sans", "Noto Sans", Arial, sans-serif;
+  --serif: "Castoro", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img, video { display: block; max-width: 100%; }
+button { font: inherit; }
+:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+.container { width: min(var(--container), calc(100% - 48px)); margin: 0 auto; }
+.narrow { width: min(var(--narrow), calc(100% - 48px)); }
+.has-text-centered { text-align: center; }
+
+.top-nav {
+  background: var(--paper);
+}
+.nav-inner {
+  width: min(var(--container), calc(100% - 48px));
+  min-height: 54px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-brand {
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.nav-brand:hover { text-decoration: none; }
+.nav-links { display: flex; gap: 22px; flex: 1; justify-content: center; }
+.nav-links a {
+  color: var(--muted);
+  font-size: 13px;
+}
+.nav-links a:hover { color: var(--link-hover); }
+
+.page-section { padding: 56px 24px; }
+.publication-header { padding-top: 72px; padding-bottom: 34px; }
+.publication-header .container { width: min(1160px, calc(100% - 48px)); }
+.publication-title {
+  margin: 0 auto;
+  max-width: 1120px;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(30px, 3.9vw, 46px);
+  font-weight: 600;
+  letter-spacing: -.035em;
+  line-height: 1.12;
+}
+.publication-authors {
+  margin: 0;
+  color: var(--link);
+  font-size: 18px;
+  line-height: 1.55;
+}
+.publication-authors a:hover { color: var(--link-hover); }
+.author-row {
+  display: flex;
+  justify-content: center;
+  gap: clamp(12px, 2.2vw, 29px);
+  margin: 2px auto;
+  white-space: nowrap;
+}
+.publication-authors sup, .publication-affiliations sup, .author-notes sup { font-size: .66em; line-height: 0; }
+.publication-affiliations {
+  margin: 1px 0 22px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+.author-notes { margin: -12px 0 22px; color: var(--muted-2); font-size: 12px; }
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  line-height: 1;
+  transition: background-color .15s ease, transform .15s ease;
+}
+.button:hover { text-decoration: none; transform: translateY(-1px); }
+.button-dark { color: var(--paper); background: var(--link); }
+.button-dark:hover { color: var(--paper); background: var(--link-hover); }
+.button-icon { margin-right: 7px; font-size: 14px; }
+
+.teaser { padding-top: 18px; padding-bottom: 58px; }
+.paper-figure { margin: 0 auto; }
+.paper-figure img {
+  width: 100%;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgba(36,53,74,.12);
+}
+.paper-figure figcaption {
+  max-width: 820px;
+  margin: 10px auto 0;
+  color: var(--muted-2);
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+.teaser-figure img { border-radius: 5px; }
+.planner-figure { max-width: 610px; margin-top: 36px; }
+
+.task-gallery { padding-top: 28px; padding-bottom: 46px; }
+.task-gallery-heading { display: block; margin-bottom: 27px; text-align: center; }
+.task-gallery h2 { margin: 0; font-size: clamp(30px, 4vw, 43px); line-height: 1.08; }
+.task-gallery h2 em { color: var(--link); font-style: normal; }
+.gallery-lead { max-width: 760px; margin: 14px auto 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.gallery-lead .accent-blue, .gallery-lead .accent-gold { font-weight: 600; }
+.gallery-lead .accent-blue { color: var(--link); }
+.gallery-lead .accent-gold { color: var(--warm); }
+.task-wall { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 7px; }
+.task-video-card { position: relative; min-width: 0; aspect-ratio: 1.2; padding: 0; overflow: hidden; border: 1px solid var(--line-strong); border-radius: 5px; background: var(--surface-alt); cursor: pointer; box-shadow: 0 1px 3px rgba(36,53,74,.08); transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease; }
+.task-video-card:hover, .task-video-card.active { z-index: 1; border-color: var(--link); box-shadow: 0 3px 10px rgba(14,120,178,.2); transform: translateY(-2px); }
+.task-video-card video { width: 100%; height: 100%; object-fit: cover; }
+.task-video-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(transparent 50%, rgba(0,0,0,.68)); pointer-events: none; }
+.task-video-card span { position: absolute; z-index: 1; right: 5px; bottom: 5px; left: 5px; overflow: hidden; color: var(--paper); font-size: 9px; line-height: 1.2; text-align: left; text-overflow: ellipsis; white-space: nowrap; }
+h2 {
+  margin: 0 0 18px;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -.025em;
+  line-height: 1.2;
+}
+.narrow h2 { margin-bottom: 22px; }
+.narrow p { margin: 0 0 16px; text-align: justify; }
+.narrow p:last-child { margin-bottom: 0; }
+.section-lead {
+  max-width: 790px;
+  margin: -5px auto 31px;
+  color: var(--muted);
+  font-size: 16px;
+  text-align: center;
+}
+.table-scroll { overflow-x: auto; }
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.results-table th, .results-table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: middle;
+}
+.results-table thead th {
+  color: var(--muted-2);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.results-table { min-width: 980px; }
+.results-table th:not(:first-child), .results-table td:not(:first-child) { text-align: right; white-space: nowrap; }
+.results-table .best th, .results-table .best td { background: var(--link-soft); }
+.results-table .best th { color: var(--link); }
+.table-note { margin: 13px 0 0; color: var(--muted-2); font-size: 12px; }
+.demo-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(240px, .8fr);
+  gap: 22px;
+  align-items: start;
+  margin-top: 24px;
+}
+.demo-video-wrap {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-alt);
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgba(36,53,74,.12);
+}
+.demo-video-wrap video { width: 100%; aspect-ratio: 1.2; object-fit: cover; }
+.video-label {
+  position: absolute;
+  top: 12px;
+  left: 13px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  color: var(--paper);
+  background: rgba(36,53,74,.88);
+  font-size: 10px;
+  letter-spacing: .03em;
+}
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ok); }
+.demo-controls { padding: 4px 0; }
+.control-group + .control-group { margin-top: 23px; }
+.control-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted-2);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.segmented { display: flex; gap: 5px; }
+.segmented button {
+  flex: 1;
+  padding: 8px 7px;
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  color: var(--muted);
+  background: var(--paper);
+  cursor: pointer;
+  font-size: 12px;
+}
+.segmented button.active, .segmented button:hover { color: var(--paper); border-color: var(--ink-strong); background: var(--ink-strong); }
+.camera-list { border-top: 1px solid var(--line); }
+.camera {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 2px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-size: 13px;
+}
+.camera:hover, .camera.active { color: var(--link); }
+.camera small { color: var(--muted-2); font-size: 10px; }
+.media-caption { margin: 16px 0 0; color: var(--muted-2); font-size: 12px; line-height: 1.5; }
+.task-select { width: 100%; padding: 9px 10px; border: 1px solid var(--line-strong); border-radius: 4px; color: var(--ink); background: var(--paper); font-size: 12px; }
+
+.bibtex {
+  overflow-x: auto;
+  margin: 23px 0 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--light);
+  color: var(--ink);
+  font: 12px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: pre;
+}
+.paper-note { margin: 0; color: var(--muted-2); font-size: 12px; text-align: center; }
+.site-footer { padding: 22px 24px; color: var(--muted-2); font-size: 12px; }
+.footer-inner { display: flex; justify-content: space-between; gap: 16px; }
+.footer-inner a { color: var(--muted-2); }
+.footer-inner a:hover { color: var(--link-hover); }
+
+@media (max-width: 760px) {
+  .nav-inner { gap: 16px; }
+  .nav-links { gap: 12px; justify-content: flex-end; }
+  .nav-links a:nth-child(2), .nav-links a:nth-child(4) { display: none; }
+  .page-section { padding-top: 44px; padding-bottom: 44px; }
+  .publication-header { padding-top: 54px; }
+  .desktop-only { display: none; }
+  .demo-panel { grid-template-columns: 1fr; }
+  .author-row { gap: 9px 15px; white-space: normal; }
+  .task-wall { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .container, .narrow { width: calc(100% - 32px); }
+  .nav-inner { width: calc(100% - 32px); }
+  .nav-brand { font-size: 14px; }
+  .nav-links { display: none; }
+  .page-section { padding-left: 16px; padding-right: 16px; }
+  .publication-title { font-size: 28px; }
+  .publication-authors { font-size: 16px; }
+  .publication-authors { line-height: 1.5; }
+  .author-row { display: block; margin: 3px auto; }
+  .publication-links { gap: 7px; }
+  .button { padding-left: 13px; padding-right: 13px; font-size: 12px; }
+  h2 { font-size: 28px; }
+  .section-lead { font-size: 15px; }
+  .task-wall { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
+  .task-video-card span { font-size: 8px; }
+  .footer-inner { display: block; }
+  .footer-inner span { display: block; margin-top: 4px; }
+  .narrow p { text-align: left; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+<body>
+  <nav class="top-nav" aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="#top" class="nav-brand">ActiveArena</a>
+      <div class="nav-links">
+        <a href="#abstract">Abstract</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#results">Results</a>
+        <a href="#citation">Citation</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="publication-header page-section">
+      <div class="container has-text-centered">
+        <h1 class="publication-title">ActiveArena: Benchmarking and Understanding Active Perception in Robotic Manipulation</h1>
+        <p class="publication-authors">
+          <span class="author-row">
+            <span><a href="https://leeibo.github.io/" target="_blank" rel="noreferrer">Yibo Li</a><sup>1,2</sup><sup>*</sup>,</span>
+            <span><a href="https://zhoues.github.io" target="_blank" rel="noreferrer">Enshen Zhou</a><sup>1,2</sup><sup>*</sup>,</span>
+            <span>Rui Chen<sup>1</sup>,</span>
+            <span>Yanjun Ding<sup>1</sup>,</span>
+            <span><a href="https://scholar.google.com/citations?user=voqw10cAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Mengzhen Liu</a><sup>2,3</sup>,</span>
+          </span>
+          <span class="author-row">
+            <span><a href="https://hany01rye.github.io/" target="_blank" rel="noreferrer">Yi Han</a><sup>1,2</sup>,</span>
+            <span><a href="https://tonyzhan10.github.io/" target="_blank" rel="noreferrer">Jiabo Zhan</a><sup>4</sup>,</span>
+            <span><a href="https://github.com/lighten001/" target="_blank" rel="noreferrer">Lipeng Wang</a><sup>1,2</sup>,</span>
+            <span><a href="https://scholar.google.com/citations?user=voqw10cAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Shanghang Zhang</a><sup>2,3</sup>,</span>
+            <span><a href="https://lucassheng.github.io/" target="_blank" rel="noreferrer">Lu Sheng</a><sup>1,2</sup><sup>†</sup></span>
+          </span>
+        </p>
+        <p class="publication-affiliations"><sup>1</sup> Beihang University &nbsp; <sup>2</sup> Beijing Academy of Artificial Intelligence &nbsp;<br class="desktop-only"><sup>3</sup> Peking University &nbsp; <sup>4</sup> Tsinghua University</p>
+        <p class="author-notes"><sup>*</sup> Equal contribution. &nbsp; <sup>†</sup> Corresponding authors.</p>
+
+        <div class="publication-links" aria-label="Project resources">
+          <a class="button button-dark" href="https://leeibo.github.io/ActiveArena/" target="_blank" rel="noreferrer"><span class="button-icon">▧</span> Paper</a>
+          <a class="button button-dark" href="https://huggingface.co/datasets/leeibo/ActiveArena-Data" target="_blank" rel="noreferrer"><span class="button-icon">◫</span> Dataset</a>
+          <a class="button button-dark" href="https://github.com/leeibo/ActiveArena" target="_blank" rel="noreferrer"><span class="button-icon">⌘</span> ActiveArena code</a>
+          <a class="button button-dark" href="https://github.com/leeibo/ActiveArena-VLA" target="_blank" rel="noreferrer"><span class="button-icon">⌘</span> ActiveArena-VLA code</a>
+          <a class="button button-dark" href="https://huggingface.co/leeibo/ActiveArena-VLA" target="_blank" rel="noreferrer"><span class="button-icon">◉</span> Checkpoints</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="task-gallery" class="task-gallery page-section">
+      <div class="container">
+        <div class="task-gallery-heading">
+          <div>
+            <h2>Move to see.<br><em>Remember to act.</em></h2>
+            <p class="gallery-lead"><span class="accent-blue">ActiveArena</span> is the <span class="accent-blue">first</span> comprehensive and standardized <span class="accent-gold">simulator–benchmark–baseline</span> suite for <span class="accent-blue">active perception in robotic manipulation</span>.</p>
+          </div>
+        </div>
+        <div id="task-wall" class="task-wall" aria-label="ActiveArena task videos" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="abstract" class="page-section">
+      <div class="container narrow">
+        <h2>Abstract</h2>
+        <p>Active perception and manipulation are crucial for robots to interact with complex scenes. Existing benchmarks struggle to evaluate how robots effectively acquire and maintain information in memory in an active manner. To this end, we introduce <b>ActiveArena-Sim</b>, an active-perception simulator with controllable viewpoints and large-scale workspaces as the foundation. Built on this, we propose <b>ActiveArena-Bench</b>, which comprises 35 tasks across 5 fine-grained categories, covering visual exploration and interactive information acquisition.</p>
+        <p>Each task is difficult to solve from passive observations alone, requiring multi-round evidence acquisition and memory-based reasoning. The benchmark provides rich memory annotations, standardized training data, and ID/OOD protocols featuring disjoint scenes, unseen distractor configurations, and novel backgrounds. We further present <b>ActiveArena-VLA</b>, a modular suite of 13 vision-language-action configurations for controlled studies of memory writing, memory capacity, proprioceptive state, subtask supervision, and high-level planning.</p>
+      </div>
+    </section>
+
+    <section id="teaser" class="page-section teaser">
+      <div class="container">
+        <h2 class="has-text-centered">Active Perception Rollouts</h2>
+        <figure class="paper-figure teaser-figure">
+          <img src="assets/images/teaser.webp" alt="Representative ActiveArena rollout showing active viewpoint changes during manipulation" loading="lazy">
+          <figcaption>Representative rollouts show how the robot searches for visual evidence, updates its memory, and completes the manipulation task.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="benchmark" class="page-section">
+      <div class="container">
+        <h2 class="has-text-centered">ActiveArena Benchmark</h2>
+        <p class="section-lead">A benchmark for manipulation when the initial observation is insufficient. Policies must search for evidence, retain it across views, and use it to execute an 18-dimensional action.</p>
+        <figure class="paper-figure">
+          <img src="assets/images/benchmark.webp" alt="ActiveArena simulator, task families, and benchmark protocol" loading="lazy">
+          <figcaption>Benchmark design, task families, controllable Astribot S1 embodiment, and the fixed ID/OOD evaluation protocol.</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <section id="method" class="page-section">
+      <div class="container">
+        <h2 class="has-text-centered">Modular VLA Suite</h2>
+        <p class="section-lead">The release separates visual memory, language supervision, proprioceptive state, and action prediction so that each source of active-perception capability can be studied independently.</p>
+        <figure class="paper-figure">
+          <img src="assets/images/framework.webp" alt="ActiveArena modular VLA framework" loading="lazy">
+          <figcaption>Modular vision-language-action configurations studied in ActiveArena. The released checkpoints use the continuous OFT action head.</figcaption>
+        </figure>
+        <figure class="paper-figure planner-figure">
+          <img src="assets/images/planner.webp" alt="Planner-guided memory management" loading="lazy">
+          <figcaption>Planner-guided memory management provides a sparse-memory alternative for active perception.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="demos" class="page-section">
+      <div class="container">
+        <h2 class="has-text-centered">Rollout Demonstrations</h2>
+        <p class="section-lead">The head camera is the policy observation. Observer and world cameras are included for visualization only.</p>
+        <div class="demo-panel">
+          <div class="demo-video-wrap">
+            <video id="rollout-video" autoplay muted loop playsinline preload="metadata" poster="assets/images/rollouts/beat_block_hammer_rotate_view/demo-observer.webp">
+              <source src="assets/videos/rollouts/beat_block_hammer_rotate_view/demo-observer.mp4" type="video/mp4">
+            </video>
+            <div class="video-label"><span class="live-dot"></span><span id="media-mode">DEMO / OBSERVER VIEW</span></div>
+          </div>
+          <div class="demo-controls">
+            <div class="control-group">
+              <label class="control-label" for="task-select">Task</label>
+              <select id="task-select" class="task-select" aria-label="Choose a benchmark task"></select>
+            </div>
+            <div class="control-group">
+              <span class="control-label">Scene split</span>
+              <div class="segmented" role="tablist" aria-label="Scene split">
+                <button class="active" data-split="demo" role="tab" aria-selected="true">Demonstration</button>
+                <button data-split="ood" role="tab" aria-selected="false">Randomized</button>
+              </div>
+            </div>
+            <div class="control-group">
+              <span class="control-label">Camera</span>
+              <div class="camera-list" role="tablist" aria-label="Camera view">
+                <button class="camera active" data-camera="observer" role="tab" aria-selected="true">Observer <small>visualization</small></button>
+                <button class="camera" data-camera="head" role="tab" aria-selected="false">Head camera <small>policy input</small></button>
+                <button class="camera" data-camera="world" role="tab" aria-selected="false">World camera <small>visualization</small></button>
+              </div>
+            </div>
+            <p id="media-caption" class="media-caption">Observer and world views are shown for explanation only. The policy receives the head camera view.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="page-section">
+      <div class="container">
+        <h2 class="has-text-centered">Simulation Results</h2>
+        <p class="section-lead">Task-macro success rates reported in the paper. Each cell shows ID / OOD (%); Avg. is computed over all 35 tasks.</p>
+        <div class="table-scroll">
+          <table class="results-table">
+            <thead><tr><th>Method</th><th>Mem.</th><th>SS</th><th>SL</th><th>ML</th><th>MD</th><th>IA</th><th>Avg.</th></tr></thead>
+          <tbody>
+              <tr><th>FAST-WAM</th><td>No</td><td>59.60 / 4.00</td><td>40.38 / 1.00</td><td>25.67 / 0.00</td><td>22.40 / 5.20</td><td>12.00 / 3.33</td><td>35.60 / 2.06</td></tr>
+              <tr><th>π<sub>0.5</sub></th><td>No</td><td>41.20 / 5.60</td><td>22.38 / 0.63</td><td>1.67 / 0.00</td><td>1.60 / 1.20</td><td>2.67 / 5.33</td><td>16.86 / 1.71</td></tr>
+              <tr><th>SaPaVe</th><td>No</td><td>48.80 / 40.80</td><td>19.88 / 5.88</td><td>10.67 / 3.00</td><td>6.00 / 2.80</td><td>25.33 / 12.67</td><td>20.91 / 10.51</td></tr>
+              <tr><th>HiF-VLA</th><td>Yes</td><td>16.80 / 14.00</td><td>6.88 / 1.13</td><td>0.00 / 0.00</td><td>17.60 / 17.20</td><td>30.67 / 18.67</td><td>10.69 / 6.57</td></tr>
+              <tr><th>MemER</th><td>Yes</td><td>81.20 / 66.00</td><td>33.88 / 18.63</td><td>18.33 / 5.67</td><td>11.60 / 6.40</td><td>40.00 / 42.00</td><td>35.31 / 23.43</td></tr>
+              <tr><th>MemoryVLA</th><td>Yes</td><td>46.00 / 34.40</td><td>20.88 / 6.50</td><td>14.00 / 2.00</td><td>9.20 / 4.40</td><td>28.00 / 27.33</td><td>22.23 / 11.20</td></tr>
+              <tr class="best"><th>ActiveArena-OFT</th><td>Yes</td><td>80.40 / 70.80</td><td>74.50 / 54.38</td><td>53.33 / 33.33</td><td>31.60 / 27.20</td><td>44.00 / 35.33</td><td><b>62.97 / 47.60</b></td></tr>
+              <tr><th>ActiveArena-Plan</th><td>Yes</td><td>79.20 / 69.60</td><td>73.38 / 52.63</td><td>49.67 / 30.00</td><td>28.00 / 24.80</td><td>42.00 / 33.33</td><td><b>60.97 / 45.54</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">See the <a href="docs/paper-sources.md">paper source ledger</a> for all baselines, definitions, and reported values.</p>
+      </div>
+    </section>
+
+    <section id="citation" class="page-section">
+      <div class="container narrow">
+        <h2 class="has-text-centered">BibTeX</h2>
+<pre class="bibtex"><code>@misc{activearena_manuscript,
+  title = {ActiveArena: Benchmarking and Understanding Active Perception in Robotic Manipulation},
+  howpublished = {\url{https://leeibo.github.io/ActiveArena/}}
+}</code></pre>
+        <p id="paper-note" class="paper-note">The project homepage currently serves as the paper-page placeholder.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>ActiveArena</span>
+      <span><a href="docs/paper-sources.md">Source ledger</a> · <a href="docs/media.md">Media provenance</a> · <a href="https://github.com/leeibo/ActiveArena/blob/main/LICENSE" target="_blank" rel="noreferrer">License</a></span>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
