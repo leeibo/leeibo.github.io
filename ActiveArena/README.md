@@ -24,4 +24,4 @@ Open <http://localhost:4173>. A file URL is not sufficient because the browser m
 - `docs/paper-sources.md` — verified paper facts, results, and image provenance.
 - `docs/media.md` / `docs/media.json` — source paths, camera semantics, hashes, and validation metadata.
 
-The observer and world clips are visualization cameras. They are never policy inputs; the head clip is the observation view for these samples. The page is prepared for deployment at <https://leeibo.github.io/ActiveArena>; the Paper button currently points to that project homepage until the camera-ready manuscript page is public.
+The observer and world clips are visualization cameras. They are never policy inputs; the head clip is the observation view for these samples. The page is prepared for deployment at <https://leeibo.github.io/ActiveArena>; the Paper button points to <https://arxiv.org/abs/2609.24124>.
