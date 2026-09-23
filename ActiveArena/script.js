@@ -12,9 +12,9 @@
   let taskRows = [];
   let rolloutRows = [];
   const cameraMeta = {
-    observer: { caption: 'Observer and world views are shown for explanation only. The policy receives the head camera view.' },
-    head: { caption: "The head camera is the policy observation view. It follows the robot's active viewpoint." },
-    world: { caption: 'World and observer views are shown for explanation only. They are not policy inputs.' }
+    observer: { label: 'FRONT VIEW', caption: 'Front and side views are shown for explanation only. The policy receives the head camera view.' },
+    head: { label: 'HEAD VIEW', caption: "The head camera is the policy observation view. It follows the robot's active viewpoint." },
+    world: { label: 'SIDE VIEW', caption: 'Side and front views are shown for explanation only. They are not policy inputs.' }
   };
   function titleCase(value) {
     return value.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
@@ -32,7 +32,7 @@
       video.poster = taskPoster;
       video.load();
     }
-    if (modeLabel) modeLabel.textContent = (split === 'demo' ? 'DEMO' : 'RANDOMIZED') + ' / ' + camera.toUpperCase() + ' VIEW';
+    if (modeLabel) modeLabel.textContent = (split === 'demo' ? 'DEMO' : 'RANDOMIZED') + ' / ' + cameraMeta[camera].label;
     if (caption) caption.textContent = cameraMeta[camera].caption;
   }
   function selectTask(id, shouldScroll = true) {

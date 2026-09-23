@@ -443,13 +443,13 @@ h2 {
     <section id="demos" class="page-section">
       <div class="container">
         <h2 class="has-text-centered">Rollout Demonstrations</h2>
-        <p class="section-lead">The head camera is the policy observation. Observer and world cameras are included for visualization only.</p>
+        <p class="section-lead">The head camera is the policy observation.</p>
         <div class="demo-panel">
           <div class="demo-video-wrap">
             <video id="rollout-video" autoplay muted loop playsinline preload="metadata" poster="assets/images/rollouts/beat_block_hammer_rotate_view/demo-observer.webp">
               <source src="assets/videos/rollouts/beat_block_hammer_rotate_view/demo-observer.mp4" type="video/mp4">
             </video>
-            <div class="video-label"><span class="live-dot"></span><span id="media-mode">DEMO / OBSERVER VIEW</span></div>
+            <div class="video-label"><span class="live-dot"></span><span id="media-mode">DEMO / FRONT VIEW</span></div>
           </div>
           <div class="demo-controls">
             <div class="control-group">
@@ -466,12 +466,12 @@ h2 {
             <div class="control-group">
               <span class="control-label">Camera</span>
               <div class="camera-list" role="tablist" aria-label="Camera view">
-                <button class="camera active" data-camera="observer" role="tab" aria-selected="true">Observer <small>visualization</small></button>
+                <button class="camera active" data-camera="observer" role="tab" aria-selected="true">Front-view camera <small>visualization</small></button>
                 <button class="camera" data-camera="head" role="tab" aria-selected="false">Head camera <small>policy input</small></button>
-                <button class="camera" data-camera="world" role="tab" aria-selected="false">World camera <small>visualization</small></button>
+                <button class="camera" data-camera="world" role="tab" aria-selected="false">Side-view camera <small>visualization</small></button>
               </div>
             </div>
-            <p id="media-caption" class="media-caption">Observer and world views are shown for explanation only. The policy receives the head camera view.</p>
+            <p id="media-caption" class="media-caption">Front and side views are shown for explanation only. The policy receives the head camera view.</p>
           </div>
         </div>
       </div>
